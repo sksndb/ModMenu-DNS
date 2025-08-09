@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mod Menú DNS</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #00ff99;
+        }
+        .slider-container {
+            margin: 20px 0;
+        }
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type=range] {
+            width: 80%;
+            height: 8px;
+            background: #333;
+            border-radius: 5px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            background: #00ff99;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        span {
+            font-size: 16px;
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>⚙️ Mod Menú DNS</h1>
+
+    <div class="slider-container">
+        <label>Aimbot</label>
+        <input type="range" min="0" max="100" value="50" id="aimbot">
+        <span id="aimbotValue">50</span>
+    </div>
+
+    <div class="slider-container">
+        <label>DPI</label>
+        <input type="range" min="0" max="100" value="50" id="dpi">
+        <span id="dpiValue">50</span>
+    </div>
+
+    <div class="slider-container">
+        <label>Seguimiento a la cabeza</label>
+        <input type="range" min="0" max="100" value="50" id="headtrack">
+        <span id="headtrackValue">50</span>
+    </div>
+
+    <script>
+        function updateValue(id, valueId) {
+            document.getElementById(id).addEventListener("input", function() {
+                document.getElementById(valueId).innerText = this.value;
+            });
+        }
+        updateValue("aimbot", "aimbotValue");
+        updateValue("dpi", "dpiValue");
+        updateValue("headtrack", "headtrackValue");
+    </script>
+</body>
+</html>
